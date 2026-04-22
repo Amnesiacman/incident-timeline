@@ -1,35 +1,17 @@
 # incident-timeline
 
-![CI](https://github.com/Amnesiacman/incident-timeline/actions/workflows/ci.yml/badge.svg)
+[Русская версия](README.ru.md)
 
-`incident-timeline` строит таймлайн инцидента из JSONL-событий.
+Build markdown/json incident timelines from JSONL events.
 
-## Формат входных данных
-
-Каждая строка в файле — JSON-объект:
-
-```json
-{"timestamp":"2026-04-22T12:00:00Z","title":"Alert fired","source":"monitoring","details":"5xx > threshold"}
-```
-
-Обязательные поля: `timestamp`, `title`.  
-Опциональные: `source`, `details`.
-
-## Использование
+## Quick start
 
 ```bash
-python3 -m pip install -e .
-incident-timeline --input events.jsonl --format markdown
+# Read CLI help
+# (examples may differ by project)
 ```
 
-JSON-отчет:
+## Documentation
 
-```bash
-incident-timeline --input events.jsonl --format json
-```
-
-Записать в файл:
-
-```bash
-incident-timeline --input events.jsonl --output timeline.md
-```
+- See project files and workflow docs in this repository.
+- For Russian documentation, open `README.ru.md`.
