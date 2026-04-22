@@ -2,16 +2,24 @@
 
 [Русская версия](README.ru.md)
 
-Build markdown/json incident timelines from JSONL events.
+Build incident timelines from JSONL events.
 
-## Quick start
+## Input format
+
+Each line in input file must be a JSON object with at least:
+
+- `timestamp`
+- `title`
+
+Optional fields:
+
+- `source`
+- `details`
+
+## Usage
 
 ```bash
-# Read CLI help
-# (examples may differ by project)
+python3 main.py --input events.jsonl --format markdown
+python3 main.py --input events.jsonl --format json
+python3 main.py --input events.jsonl --output timeline.md
 ```
-
-## Documentation
-
-- See project files and workflow docs in this repository.
-- For Russian documentation, open `README.ru.md`.

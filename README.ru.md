@@ -2,16 +2,24 @@
 
 [English version](README.md)
 
-Построение markdown/json таймлайна инцидента из JSONL-событий.
+Построение таймлайна инцидента из JSONL-событий.
 
-## Быстрый старт
+## Формат входных данных
+
+Каждая строка входного файла — JSON-объект минимум с полями:
+
+- `timestamp`
+- `title`
+
+Опциональные поля:
+
+- `source`
+- `details`
+
+## Использование
 
 ```bash
-# Посмотрите справку CLI
-# (конкретные команды зависят от проекта)
+python3 main.py --input events.jsonl --format markdown
+python3 main.py --input events.jsonl --format json
+python3 main.py --input events.jsonl --output timeline.md
 ```
-
-## Документация
-
-- Детали смотрите в файлах проекта и workflow-конфигурациях в этом репозитории.
-- Для англоязычной документации откройте `README.md`.
