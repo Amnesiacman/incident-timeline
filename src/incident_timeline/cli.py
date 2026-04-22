@@ -28,4 +28,3 @@ def main(argv=None) -> int:
         Path(args.output).write_text(text + "\n", encoding="utf-8")
     print(text)
     return 0
-

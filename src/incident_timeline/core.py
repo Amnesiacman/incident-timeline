@@ -40,4 +40,3 @@ def render_markdown(report: dict) -> str:
         if item["details"]:
             lines.append(f"  - {item['details']}")
     return "\n".join(lines)
-
