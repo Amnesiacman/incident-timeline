@@ -1,22 +1,33 @@
 # incident-timeline
 
-Build markdown incident timelines from events, logs, and commits.
+`incident-timeline` строит таймлайн инцидента из JSONL-событий.
 
-## MVP status
+## Формат входных данных
 
-- Basic CLI scaffold is ready (`main.py`).
-- Supports `--format text|json` and `--dry-run`.
-- Intended as a foundation for iterative feature work.
+Каждая строка в файле — JSON-объект:
 
-## Quick start
-
-```bash
-python3 main.py --help
-python3 main.py --format json --dry-run
+```json
+{"timestamp":"2026-04-22T12:00:00Z","title":"Alert fired","source":"monitoring","details":"5xx > threshold"}
 ```
 
-## Next steps
+Обязательные поля: `timestamp`, `title`.  
+Опциональные: `source`, `details`.
 
-1. Add domain-specific command set and config file support.
-2. Add tests and GitHub Actions workflow.
-3. Package and publish first tagged release.
+## Использование
+
+```bash
+python3 -m pip install -e .
+incident-timeline --input events.jsonl --format markdown
+```
+
+JSON-отчет:
+
+```bash
+incident-timeline --input events.jsonl --format json
+```
+
+Записать в файл:
+
+```bash
+incident-timeline --input events.jsonl --output timeline.md
+```
