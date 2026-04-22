@@ -1,5 +1,7 @@
 # incident-timeline
 
+![CI](https://github.com/Amnesiacman/incident-timeline/actions/workflows/ci.yml/badge.svg)
+
 `incident-timeline` строит таймлайн инцидента из JSONL-событий.
 
 ## Формат входных данных
